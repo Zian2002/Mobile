@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1)
+        let mark = {
+            mass: 78,
+            height: 1.69
+        }
+
+        let john = {
+            mass: 92,
+            height: 1.95
+        }
+
+        // 2)
+        var calculateBMI = (mass, height) => {
+            return mass / (height * height)
+        }
+
+        let markBMI = calculateBMI(mark.mass, mark.height);
+        let johnBMI = calculateBMI(john.mass, john.height);
+
+        console.log(markBMI);
+        console.log(johnBMI);
+
+        // 3)
+        let markHigherBMI = markBMI > johnBMI;
+        console.log(markHigherBMI);
+    </script>
+</body>
+
+</html>

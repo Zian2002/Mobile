@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      let dolphinsScore = [96, 108, 89];
+      let koalasScore = [88, 91, 110];
+
+      function calcAvg(array) {
+        let total = 0;
+        array.forEach((x) => {
+          total += x;
+        });
+
+        return total / array.length;
+      }
+      // 1
+      let avgDolphins = calcAvg(dolphinsScore);
+      let avgKoalas = calcAvg(koalasScore);
+      console.log(avgDolphins);
+      console.log(avgKoalas);
+
+      // 2
+      let winner;
+      if (avgDolphins > avgKoalas) winner = "Dolphins";
+      else if (avgDolphins < avgKoalas) winner = "Koalas";
+      else winner = "Both";
+      console.log(`2. winner is ${winner}`);
+
+      // 3
+      dolphinsScore = [97, 112, 101];
+      koalasScore = [109, 95, 123];
+
+      avgDolphins = calcAvg(dolphinsScore);
+      avgKoalas = calcAvg(koalasScore);
+
+      winner = undefined;
+      if (avgDolphins > avgKoalas && avgDolphins >= 100) winner = "Dolphins";
+      else if (avgDolphins < avgKoalas && avgKoalas >= 100) winner = "Koalas";
+      else winner = undefined;
+      console.log(`3. winner is ${winner}`);
+
+      // 4
+      dolphinsScore = [97, 112, 101];
+      koalasScore = [109, 95, 106];
+
+      avgDolphins = calcAvg(dolphinsScore);
+      avgKoalas = calcAvg(koalasScore);
+
+      winner = undefined;
+      if (avgDolphins > avgKoalas && avgDolphins >= 100) winner = "Dolphins";
+      else if (avgDolphins < avgKoalas && avgKoalas >= 100) winner = "Koalas";
+      else if ((avgDolphins = avgKoalas && avgKoalas >= 100)) winner = "Both";
+      else winner = undefined;
+      console.log(`4. winner is ${winner}`);
+    </script>
+  </body>
+</html>

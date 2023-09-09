@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .boxed {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Number Guessing Game</h1>
+    <h2>Guess number from 0 to 10</h2>
+    <div class="boxed">
+      <p>Score:</p>
+      <span class="score">0</span>
+    </div>
+    <input type="text" class="guess" />
+    <button class="check">Check</button>
+    <button class="again">Again</button>
+    <div class="boxed">
+      <p>Secret number:</p>
+      <span class="secretNumber">?</span>
+    </div>
+
+    <script>
+      //   let secretNumber = Math.floor(Math.random() * 10);
+      let secretNumber = 10;
+      let score = 0;
+      const scoreSpan = document.querySelector(".score");
+      const guessInput = document.querySelector(".guess");
+      const secretSpan = document.querySelector(".secretNumber");
+      const againButton = document.querySelector(".again");
+      const checkButton = document.querySelector(".check");
+
+      let still = true;
+
+      function check() {
+        if (still) {
+          secretSpan.innerHTML = secretNumber;
+          if (Number(guessInput.value) == secretNumber) {
+            score++;
+            scoreSpan.innerHTML = score;
+            console.log(true);
+            setTimeout(() => {
+              secretSpan.innerHTML = "?";
+            }, 3000);
+          }
+        }
+      }
+
+      checkButton.addEventListener("click", check);
+
+      function resetGame() {
+        score = 0;
+        secretNumber = Math.floor(Math.random() * 20) + 1;
+        document.querySelector(".message").textContent = "Start guessing...";
+        document.querySelector(".number").textContent = "?";
+        document.querySelector(".score").textContent = score;
+        document.querySelector(".guess").value = "";
+        document.querySelector("body").style.backgroundColor = "#222";
+        document.querySelector(".number").style.width = "15rem";
+      }
+
+      againButton.addEventListener("click", resetGame);
+    </script>
+  </body>
+</html>
