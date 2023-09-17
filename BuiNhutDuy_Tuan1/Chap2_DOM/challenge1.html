@@ -27,8 +27,8 @@
     </div>
 
     <script>
-      //   let secretNumber = Math.floor(Math.random() * 10);
-      let secretNumber = 10;
+      let secretNumber = Math.floor(Math.random() * 10);
+      // let secretNumber = 10;
       let score = 0;
       const scoreSpan = document.querySelector(".score");
       const guessInput = document.querySelector(".guess");
@@ -44,10 +44,15 @@
           if (Number(guessInput.value) == secretNumber) {
             score++;
             scoreSpan.innerHTML = score;
+            guessInput.value = "";
+            secretNumber = Math.floor(Math.random() * 10);
             console.log(true);
             setTimeout(() => {
               secretSpan.innerHTML = "?";
             }, 3000);
+          } else {
+            still = false;
+            
           }
         }
       }
@@ -56,13 +61,11 @@
 
       function resetGame() {
         score = 0;
-        secretNumber = Math.floor(Math.random() * 20) + 1;
-        document.querySelector(".message").textContent = "Start guessing...";
-        document.querySelector(".number").textContent = "?";
-        document.querySelector(".score").textContent = score;
-        document.querySelector(".guess").value = "";
-        document.querySelector("body").style.backgroundColor = "#222";
-        document.querySelector(".number").style.width = "15rem";
+        secretNumber = Math.floor(Math.random() * 10);
+        scoreSpan.innerHTML = "0";
+        secretSpan.innerHTML = "?";
+        guessInput.value = "";
+        still = true;
       }
 
       againButton.addEventListener("click", resetGame);
