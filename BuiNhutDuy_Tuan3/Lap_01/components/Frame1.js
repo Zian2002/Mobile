@@ -1,35 +1,34 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-import { LinearGradient } from 'expo-linear-gradient';
-export default function App() {
+const Frame1 = () => {
   return (
-    <LinearGradient colors={["#C7F4F6", "#D1F4F6", "#E5F4F5", "#00CCF9"]} style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <Image
-          source={require("./assets/cycle.png")}
-          style={styles.image}
-        ></Image>
-        <Text style={styles.name}>GROW YOUR BUSINESS</Text>
-        <Text style={styles.title}>
-          We will help you to grow your business using online server
-        </Text>
-        <div style={styles.action}>
-          <div style={styles.button}>Login</div>
-          <div style={styles.button}>Sign up</div>
-        </div>
-      </View>
-    </LinearGradient>
+    <View style={styles.container}>
+      <Image
+        source={require("../assets/cycle.png")}
+        style={styles.image}
+      ></Image>
+      <Text style={styles.name}>GROW YOUR BUSINESS</Text>
+      <Text style={styles.title}>
+        We will help you to grow your business using online server
+      </Text>
+      <div style={styles.action}>
+        <div style={styles.button}>Login</div>
+        <div style={styles.button}>Sign up</div>
+      </div>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    maxWidth: 360,
+    paddingHorizontal: 30,
     marginHorizontal: "auto",
     alignItems: "center",
     marginLeft: "auto",
     marginRight: "auto",
     textAlign: "center",
+    backgroundImage:
+      "linear-gradient(180deg, #C7F4F7 0.03%, #D1F4F6 30.21%, #E5F4F5 85.42%, #00CCF9 100%)",
   },
   image: {
     width: 140,
@@ -65,3 +64,5 @@ const styles = StyleSheet.create({
     width: 100,
   },
 });
+
+export default Frame1;
