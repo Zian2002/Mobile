@@ -9,13 +9,13 @@ import Frame8 from "./components/Frame8";
 
 export default function App() {
   return (
-    <Frame1></Frame1>
+    // <Frame1></Frame1>
     // <Frame2></Frame2>
     // <Frame3></Frame3>
     // <Frame4></Frame4>
     // <Frame5></Frame5>
     // <Frame6></Frame6>
     // <Frame7></Frame7>
-    // <Frame8></Frame8>
+    <Frame8></Frame8>
   );
 }
