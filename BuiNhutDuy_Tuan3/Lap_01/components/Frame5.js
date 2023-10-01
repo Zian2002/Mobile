@@ -23,7 +23,7 @@ export default function Frame5() {
         </View>
       </View>
       <View style={{ width: "100%", marginTop: 50, height: 40 }}>
-        <Button title="LOGIN" color="#E3C000" />
+        <Button title="LOGIN" color="#c45845" />
       </View>
       <Text style={styles.text}>When you agree to terms and conditions</Text>
       <Text style={{ color: "blue" }} onPress={() => Linking.openURL("")}>

@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     paddingTop: 70,
     textAlign: "center",
     alignItems: "center",
-    backgroundColor: "#f2c400",
+    backgroundImage: "linear-gradient(180deg, #FBCB00 0%, #BF9A00 100%)",
   },
   title: {
     fontSize: 30,

@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   link: {
+    width : "100%",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-around",
@@ -136,7 +137,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    minWidth: 135,
     display: "block",
     backgroundColor: "#fff",
     padding: 5,
@@ -156,14 +156,14 @@ const styles = StyleSheet.create({
     transform: [{ translateY: 15 }],
   },
   list: {
+    width : "100%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
   media: {
     width: 75,
     height: 75,
-    marginHorizontal: 20,
   },
   mediaImage: {
     width: "100%",

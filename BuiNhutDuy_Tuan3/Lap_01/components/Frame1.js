@@ -2,10 +2,12 @@ import { StyleSheet, Text, View, Image } from "react-native";
 const Frame1 = () => {
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../assets/cycle.png")}
-        style={styles.image}
-      ></Image>
+      <View style={styles.media}>
+        <Image
+          source={require("../assets/cycle.png")}
+          style={styles.image}
+        ></Image>
+      </View>
       <Text style={styles.name}>GROW YOUR BUSINESS</Text>
       <Text style={styles.title}>
         We will help you to grow your business using online server
@@ -30,11 +32,16 @@ const styles = StyleSheet.create({
     backgroundImage:
       "linear-gradient(180deg, #C7F4F7 0.03%, #D1F4F6 30.21%, #E5F4F5 85.42%, #00CCF9 100%)",
   },
-  image: {
+  media: {
     width: 140,
     height: 140,
     marginTop: 100,
     marginBottom: 50,
+  },
+  image : {
+    width : "100%",
+    height : "100%",
+    objectFit : "cover"
   },
   name: {
     fontSize: 25,

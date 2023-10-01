@@ -42,7 +42,7 @@ export default function Frame6() {
         </View>
       </View>
 
-      <View style={{ width: "100%", marginTop: 50, marginBottom : 20, height: 40 }}>
+      <View style={{ width: "100%", marginTop: 35, marginBottom : 20, height: 40 }}>
         <Button title="REGISTER" color="#c34e3b"/>
       </View>
       <Text>When you agree to terms and conditions</Text>

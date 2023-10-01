@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   wrapper: {
     display: "flex",
     flexDirection: "row",
-    width: 300,
+    width: "100%",
     height: 45,
     backgroundColor: "#C4C4C4",
     marginBottom: 40,
