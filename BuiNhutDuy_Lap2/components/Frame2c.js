@@ -10,46 +10,36 @@ import React, { useEffect, useState } from "react";
 
 const Frame2c = () => {
   const [value, setValue] = useState("");
-  const [low, setLow] = useState(false);
-
-  window.addEventListener("load", () => {
-    const lowCheck = document.querySelector("#low");
-    console.log(lowCheck);
-    lowCheck.setValue(false);
-  });
-
+  const [upCheckBox, setUpCheckBox] = useState(false);
+  const [lowCheckBox, setLowCheckBox] = useState(false);
+  const [numbCheckBox, setNumbCheckBox] = useState(false);
+  const [symbolCheckBox, setSymbolCheckBox] = useState(false);
+  const validate = (value) => {
+    setUpCheckBox(/[A-Z]/.test(value));
+    setLowCheckBox(/[a-z]/.test(value));
+    setNumbCheckBox(/[0-9]/.test(value));
+    setSymbolCheckBox(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(value));
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>PASSWORD GENERATOR</Text>
       <TextInput
         style={styles.mainInput}
         value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-          console.log(value);
+        onChangeText={(value) => {
+          setValue(value);
+          validate(value);
         }}
       />
       <View style={styles.valid}>
         <View style={styles.wrapper}>
           <Text style={styles.text}>Password length</Text>
-          <TextInput style={styles.input} />
+          <TextInput style={styles.input} value={value.length} editable={false} />
         </View>
-        <Wrapper
-          id="low"
-          name="Include lower case letters"
-          isChecked={true}
-        ></Wrapper>
-        <Wrapper
-          id="up"
-          name="Include upcase letters"
-          isChecked={false}
-        ></Wrapper>
-        <Wrapper id="number" name="Include number" isChecked={true}></Wrapper>
-        <Wrapper
-          id="symbol"
-          name="Include special symbol"
-          isChecked={false}
-        ></Wrapper>
+        <Wrapper label="Include upcase letters" value={upCheckBox}></Wrapper>
+        <Wrapper label="Include lowcase letters" value={lowCheckBox}></Wrapper>
+        <Wrapper label="Include number" value={numbCheckBox}></Wrapper>
+        <Wrapper label="Include special symbol" value={symbolCheckBox}></Wrapper>
       </View>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>GENERATE PASSWORD</Text>
@@ -61,8 +51,8 @@ const Frame2c = () => {
 const Wrapper = (props) => {
   return (
     <View style={styles.wrapper}>
-      <Text style={styles.text}>{props.name}</Text>
-      <CheckBox id={props.id} value={props.isChecked} style={styles.checkbox} />
+      <Text style={styles.text}>{props.label}</Text>
+      <CheckBox value={props.value} style={styles.checkbox} />
     </View>
   );
 };
