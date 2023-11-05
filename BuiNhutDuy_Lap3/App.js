@@ -1,12 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
   Image,
   StyleSheet,
   Text,
-  Touchable,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -27,7 +25,7 @@ export default function App() {
         <Stack.Screen
           options={{ headerShown: false }}
           name="Screen2"
-          component={Todo}
+          component={Screen2}
         ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
